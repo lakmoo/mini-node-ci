@@ -1,0 +1,16 @@
+{
+  "name": "mini_node_ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "globals": "^17.14.0",
+    "jest": "^29.7.0"
+  }
+}
