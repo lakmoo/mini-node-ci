@@ -11,25 +11,25 @@ jobs:
 
         steps:
             - name: Checkout code
-            uses: actions/checkout@v4
-            with:
-                fetch-depth: 0
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
             - name: Setup Node.js
-            uses: actions/setup-node@v4
-            with:
-                node-version: '24'
-                cache: 'npm'
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '24'
+                  cache: 'npm'
 
             - name: Install dependencies
-            run: npm ci
+              run: npm ci
 
             - name: Run tests
-            run: npm test -- --coverage
-            env:
-                NODE_OPTIONS: --experimental-vm-modules
+              run: npm test -- --coverage
+              env:
+                  NODE_OPTIONS: --experimental-vm-modules
 
             - name: SonarCloud Scan
-            uses: SonarSource/sonarqube-scan-action@v7
-            env:
-                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              uses: SonarSource/sonarqube-scan-action@v7
+              env:
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
